@@ -19,4 +19,6 @@
 
 *.idea
 *.log
+*.json
+
 logs

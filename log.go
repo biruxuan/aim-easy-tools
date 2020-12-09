@@ -12,13 +12,21 @@ import (
 
 var Log *zap.SugaredLogger
 
-const (
+var (
 	outputDir = "./logs/"
 	outPath   = "run.log"
 	errPath   = "run.err"
 )
 
-func init() {
+//对默认参数进行设置
+func LogInitWithValues(errorPath string, outputPath string, allOutputDir string) {
+	errPath = errorPath
+	outPath = outputPath
+	outputDir = allOutputDir
+	LogInit()
+}
+
+func LogInit() {
 	_, err := os.Stat(outputDir)
 	if err != nil {
 		if os.IsNotExist(err) {
