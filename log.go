@@ -26,6 +26,7 @@ func LogInitWithValues(errorPath string, outputPath string, allOutputDir string)
 	LogInit()
 }
 
+//无参数初始化
 func LogInit() {
 	_, err := os.Stat(outputDir)
 	if err != nil {
